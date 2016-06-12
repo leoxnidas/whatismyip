@@ -1,0 +1,19 @@
+#!/bin/bash
+
+PROJECT="whatismyip"
+DIR=/usr/local/share
+BIN=/usr/local/bin
+DOC_DIR=$DIR/whatismyip
+BIN_DIR=$BIN
+
+if [[ -d $DOC_DIR ]]; then
+	echo "$DOC_DIR already exists."
+else
+	echo "$DOC_DIR does not exists, it will be create it."
+	mkdir $DOC_DIR
+fi
+
+echo "Installing $PROJECT."
+cp ./LICENSE    $DOC_DIR/LICENSE
+cp ./README.md  $DOC_DIR/README.md
+cp ./whatismyip $BIN_DIR/whatismyip
