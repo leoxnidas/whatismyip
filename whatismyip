@@ -26,7 +26,6 @@
 
 PUBLIC_IP="$(dig +short myip.opendns.com @resolver1.opendns.com)"
 
-
 help() {
 	echo -e "Creator: Leonardo Esparis"
 	echo -e "Email: leo.leo.leoxnidas.c.14@gmail.com"
@@ -48,11 +47,12 @@ case "$1" in
 	;;
 
 	"-m")
-	if [[ "$2" == "" ]]
+	SIZE=${#2}
+	if [[ $SIZE -ge 1 ]]
 		then
-		echo "$PUBLIC_IP"
-	else
 		echo "$2 $PUBLIC_IP"
+	else
+		help
 	fi
 	;;
 
